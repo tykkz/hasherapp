@@ -21,6 +21,26 @@ class TestHashText(unittest.TestCase):
 
 	def test_diferent_function_array(self):
 		self.assertNotEqual(self.hello_pass_1, hash_text(self.avail_func_array2, self.text, 1), "Incorrect list of results, different hash algorithms used.")
-			
+	
+	def test_none_text_type(self):
+		self.assertFalse(hash_text(self.avail_func_array, None, 1)[0], "Incorrect type for text to be hashed.")
+	
+	def test_incorrect_text_type(self):
+		self.assertFalse(hash_text(self.avail_func_array, 9999, 1)[0], "Incorrect type for the text parameter; should be of string type.")
+	
+	def test_none_pass_count_type(self):
+		self.assertFalse(hash_text(self.avail_func_array, self.text, None)[0], "Incorrect type for pass count.")
+	
+	def test_different_pass_count(self):
+		self.assertNotEqual(self.hello_pass_1, hash_text(self.avail_func_array, self.text, 9999), "Incorrect list of results, different hash algorithms used.")
+	
+	def test_incorrect_pass_count_type(self):
+		self.assertFalse(hash_text(self.avail_func_array, self.text, self.text)[0], "Incorrect type for the pass count parameter; should be of integer type.")
+	
+	def test_pass_count_value(self):
+		self.assertFalse(hash_text(self.avail_func_array, self.text, 0)[0], "Incorrect value for the pass count parameter; should be larger than zero.")
+		self.assertFalse(hash_text(self.avail_func_array, self.text, -9999)[0], "Incorrect value for the pass count parameter; should be larger than zero.")
+		self.assertFalse(hash_text(self.avail_func_array, self.text, 99999999)[0], "Incorrect value for the pass count parameter; should be smaller than 1000000.")
+				
 if __name__ == '__main__':
 	unittest.main()

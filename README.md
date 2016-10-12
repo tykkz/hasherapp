@@ -3,5 +3,5 @@
 [![Test Coverage](https://codeclimate.com/github/tykkz/hasherapp/badges/coverage.svg)](https://codeclimate.com/github/tykkz/hasherapp/coverage)
 [![Issue Count](https://codeclimate.com/github/tykkz/hasherapp/badges/issue_count.svg)](https://codeclimate.com/github/tykkz/hasherapp)
 
-# hasherapp
+# Text Hash Generator
 An application that computes cryptographic hash value of a given text (and maybe file).
