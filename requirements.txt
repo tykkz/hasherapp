@@ -1,2 +1,15 @@
-coverage
-codeclimate-test-reporter
+alabaster==0.7.6
+Babel==2.1.1
+click==6.6
+codeclimate-test-reporter==0.1.2
+coverage==4.2
+Flask==0.11.1
+docutils==0.12
+gunicorn==19.6.0
+itsdangerous==0.24
+Jinja2==2.8
+MarkupSafe==0.23
+lxml==3.6.0
+PyYAML==3.12
+Werkzeug==0.11.11
+virtualenv==15.0.3

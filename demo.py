@@ -27,5 +27,5 @@ def compute():
 		app.logger.info('passcount: %d -- %s' % (passcount, type(passcount)))
 
 		result = hash_text(hashlist, texttohash, passcount)
-		print result
+		
 		return render_template('compute.html', result=result)
