@@ -10,7 +10,12 @@
 		</div><!-- header -->
 		{% if result %}
 		<div id="description" class="texts">
-			<h3>Resulting hash values: <b>{{result[1]}}</b></h3>
+			<h3>Resulting hash values: </h3>
+			<ul>
+			{% for res in result[1] %}
+				<li><b>{{ res }}:</b> {{ result[1][res] }}</li>
+			{% endfor %}
+			</ul>
 		</div><!-- description -->
 		{% endif %}
 		<div id="form" class="texts">
