@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+    <title>Text Hash Generator</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='compute.css') }}">
+</head>
+<body>
+	<div class="container">
+		<div id="header">
+			<h3><a href="/compute" >Text Hash Generator</a></h3>
+		</div><!-- header -->
+		{% if result %}
+		<div id="description" class="texts">
+			<h3>Resulting hash values: <b>{{result[1]}}</b></h3>
+		</div><!-- description -->
+		{% endif %}
+		<div id="form" class="texts">
+			<form action="compute" method="post">
+				<p>Write your text below:</p>
+				<textarea cols="50" rows="5" name="texttohash" id="texttohash">The quick brown fox jumps over the lazy dog</textarea>
+				<p>Select the list of hash functions below: (Multiple selection is allowed)</p>
+				<select name="hashlist" multiple="multiple" id="hashlist">
+					<option value="md5">MD5</option>
+					<option value="sha1">SHA1</option>
+					<option value="sha224">SHA224</option>
+					<option value="sha256">SHA256</option>
+					<option value="sha384">SHA384</option>
+					<option value="sha512">SHA512</option>
+				</select>
+				<p>How many times to apply the given hash functions:</p>
+				<input type="number" min="1" max="1000000" name="passcount" id="passcount" />
+				<button type="submit" value="submit" name="submit" class="button"> Hash text!</button>
+				<br/>
+			</form>
+		</div><!-- form -->
+	</div><!-- container -->
+</body>
