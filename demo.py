@@ -23,7 +23,11 @@ def compute():
 		texttohash = request.form['texttohash']
 		app.logger.info('texttohash: %s -- %s' % (texttohash, type(texttohash)))
 
-		passcount = int(request.form['passcount'])
+		passcount = request.form['passcount']
+		try:
+			passcount = int(passcount)
+		except ValueError:
+			passcount = 0
 		app.logger.info('passcount: %d -- %s' % (passcount, type(passcount)))
 
 		result = hash_text(hashlist, texttohash, passcount)
