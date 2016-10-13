@@ -5,3 +5,5 @@
 
 # Text Hash Generator
 An application that computes cryptographic hash value of a given text (and maybe file).
+
+Demo site: https://secret-retreat-76810.herokuapp.com/compute
