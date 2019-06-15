@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from algorithm import hash_text
+from algorithm import *
 
 app = Flask(__name__)
 
@@ -33,3 +33,8 @@ def compute():
 		result = hash_text(hashlist, texttohash, passcount)
 		
 		return render_template('compute.html', result=result)
+
+@app.route('/hashlist', methods=['GET'])
+def hashlist():
+	hashes = hash_list()
+	return hashes

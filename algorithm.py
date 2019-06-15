@@ -1,5 +1,8 @@
 import hashlib
 
+def hash_list():
+	return str(hashlib.algorithms_guaranteed)
+
 def hash_text(algorithm_array, text, pass_count):
 	result_dict = {}
 	# Type checking
